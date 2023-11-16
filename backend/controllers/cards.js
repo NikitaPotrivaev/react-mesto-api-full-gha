@@ -52,7 +52,7 @@ const likeCard = async (req, res, next) => {
       req.params.cardId,
       { $addToSet: { likes: req.user._id } },
       { new: true },
-    ).populate(['likes', 'owner']);
+    );
     if (!like) {
       throw new NotFound('Отсутствует данная карточка');
     } else {
@@ -73,7 +73,7 @@ const deleteLike = async (req, res, next) => {
       req.params.cardId,
       { $pull: { likes: req.user._id } },
       { new: true },
-    ).populate(['likes', 'owner']);
+    );
     if (!removeLike) {
       throw new NotFound('Отсутствует данная карточка');
     } else {

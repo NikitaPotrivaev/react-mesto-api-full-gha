@@ -3,8 +3,8 @@ import { CurrentUserContext } from "../context/CurrentUserContext"
 
 export function Card(props) {
     const currentUser = useContext(CurrentUserContext)
-    const isOwn = props.card.owner._id === currentUser._id
-    const isLiked = props.card.likes.some(item => item._id === currentUser._id);
+    const isOwn = props.card.owner === currentUser._id
+    const isLiked = props.card.likes.some(id => id === currentUser._id);
 
     function handleClick() {
         props.onCardClick(props.card)
