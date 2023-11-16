@@ -1,0 +1,12 @@
+.header__member-zone {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+    padding: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .header__member-zone {
+        margin-right: 27px;
+    }
+}

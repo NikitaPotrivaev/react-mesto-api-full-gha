@@ -1,0 +1,8 @@
+.cards__info {
+    display: flex;
+    max-width: 282px;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    border-radius: 10px;
+    position: relative;
+}

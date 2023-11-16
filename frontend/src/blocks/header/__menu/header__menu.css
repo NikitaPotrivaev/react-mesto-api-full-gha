@@ -1,0 +1,15 @@
+.header__menu {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.2;
+    text-decoration: none;
+    color: #FFF;
+    margin:  0;
+    padding: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .header__menu {
+        font-size: 14px;
+    }
+}
