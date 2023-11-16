@@ -80,7 +80,7 @@ function App() {
     if(token) {
       authApi.checkToken(token)
        .then((res) => {
-            setEmail(res.data.email)
+            setEmail(res.email)       
             setIsloggedIn(true)
             navigate('/')
         })

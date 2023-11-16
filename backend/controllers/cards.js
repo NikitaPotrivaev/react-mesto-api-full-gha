@@ -52,11 +52,11 @@ const likeCard = async (req, res, next) => {
       req.params.cardId,
       { $addToSet: { likes: req.user._id } },
       { new: true },
-    );
+    ).populate(['likes', 'owner']);
     if (!like) {
       throw new NotFound('Отсутствует данная карточка');
     } else {
-      res.send({ like });
+      res.send(like);
     }
   } catch (error) {
     if (error.name === 'CastError') {
@@ -73,11 +73,11 @@ const deleteLike = async (req, res, next) => {
       req.params.cardId,
       { $pull: { likes: req.user._id } },
       { new: true },
-    );
+    ).populate(['likes', 'owner']);
     if (!removeLike) {
       throw new NotFound('Отсутствует данная карточка');
     } else {
-      res.send({ removeLike });
+      res.send(removeLike);
     }
   } catch (error) {
     if (error.name === 'CastError') {

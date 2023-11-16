@@ -24,7 +24,7 @@ const getUser = async (req, res, next) => {
     if (!user) {
       throw new NotFound('Пользователь не найден');
     } else {
-      res.send({ user });
+      res.send(user);
     }
   } catch (error) {
     if (error.name === 'CastError') {
@@ -42,7 +42,7 @@ const getUserId = async (req, res, next) => {
     if (!user) {
       throw new NotFound('Пользователь не найден');
     } else {
-      res.send({ user });
+      res.send(user);
     }
   } catch (error) {
     if (error.name === 'CastError') {
@@ -83,7 +83,7 @@ const updateUserData = async (req, res, next) => {
       { name, about },
       { new: true, runValidators: true },
     );
-    res.send({ update });
+    res.send(update);
   } catch (error) {
     if (error.name === 'ValidationError') {
       next(new BadRequest('Переданы некорректные данные при обновлении пользователя'));
@@ -101,7 +101,7 @@ const updateAvatar = async (req, res, next) => {
       { avatar },
       { new: true, runValidators: true },
     );
-    res.send({ userAvatar });
+    res.send(userAvatar);
   } catch (error) {
     if (error.name === 'ValidationError') {
       next(new BadRequest('Переданы некорректные данные при обновлении аватара пользователя'));

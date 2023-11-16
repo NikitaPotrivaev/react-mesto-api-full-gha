@@ -16,8 +16,8 @@ class Auth {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`
-            }
+                authorization: `Bearer ${token}`
+            } 
         })
         .then(this._checkRequest)
     }
@@ -44,6 +44,10 @@ class Auth {
             body: JSON.stringify({ password, email })
         })
         .then(this._checkRequest)
+        .then((data) => {
+            localStorage.setItem('token', data.token)
+            return data;
+        })
     }
 }
 
