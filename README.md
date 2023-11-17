@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.128.122
+IP 158.160.128.122
 
 Frontend https://reload.nomoredomainsmonster.ru
 
