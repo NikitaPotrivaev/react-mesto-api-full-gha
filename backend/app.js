@@ -57,7 +57,7 @@ app.post('/signup', validateUserRegister, registerUser);
 app.use('/users', auth, userRouter);
 app.use('/cards', auth, cardRouter);
 
-app.all(auth, (req, res, next) => {
+app.all('*', auth, (req, res, next) => {
   next(new NotFound('Страница не найдена'));
 });
 
