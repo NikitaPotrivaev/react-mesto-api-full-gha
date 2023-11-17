@@ -51,4 +51,4 @@ class Auth {
     }
 }
 
-export const authApi = new Auth('http://localhost:3000')
+export const authApi = new Auth('http://api.reload.nomoredomainsmonster.ru')

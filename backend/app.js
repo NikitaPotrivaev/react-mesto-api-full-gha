@@ -22,11 +22,7 @@ const errorHandler = require('./middlewares/error-handler');
 const NotFound = require('./utils/NotFound');
 
 const app = express();
-app.use(cors({
-  origin: ['http://localhost:5173'],
-  credentials: true,
-  maxAge: 30,
-}));
+app.use(cors());
 app.use(helmet());
 
 const limiter = rateLimit({

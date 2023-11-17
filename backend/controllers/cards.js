@@ -6,7 +6,7 @@ const Forbidden = require('../utils/Forbidden'); // 403
 
 const getCards = async (req, res, next) => {
   try {
-    const cards = await Card.find({});
+    const cards = await Card.find({}).sort({ createdAt: -1 });
     res.send(cards);
   } catch (error) {
     next(error);

@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.128.122
 
-Frontend https://...
+Frontend https://reload.nomoredomainsmonster.ru
 
-Backend https://...
+Backend https://api.reload.nomoredomainsmonster.ru
