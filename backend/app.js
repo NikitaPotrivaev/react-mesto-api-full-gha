@@ -8,7 +8,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, DB_ADDRESS = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 // eslint-disable-next-line import/no-extraneous-dependencies
 const cors = require('cors');
 const { userRouter } = require('./routes/users');
@@ -38,7 +38,7 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
+mongoose.connect(DB_ADDRESS, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
