@@ -22,7 +22,11 @@ const errorHandler = require('./middlewares/error-handler');
 const NotFound = require('./utils/NotFound');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ['https://reload.nomoredomainsmonster.ru'],
+  credentials: true,
+  maxAge: 30,
+}));
 app.use(helmet());
 
 const limiter = rateLimit({
